@@ -1,3 +1,4 @@
-# My Awesome Book
+# Peony-Qt的开发者手册（中文版）
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+由于考虑到国际化的问题，我在开发peony-qt的时候没有在代码中使用中文注释，所以生成的开发文档可能会比较难读。为了使开发人员能够快速了解peony-qt的整体设计和开发思路，我抽空写了这一本gitbook，供大家阅读。如果只是想要了解开发的计划和目前的进度，可能这本书就够了。但是我没有办法也没有时间去把我所有的想法都写出来，如果真的需要深入的了解文件管理器的开发，这本书可能连入门都算不上，建议有这方面志愿的朋友结合这本书，以及我的源码和生成的开发文档再进行一个从入门到放弃的过程（滑稽）。
+
