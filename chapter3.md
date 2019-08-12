@@ -47,8 +47,6 @@ int main(int argc, char *argv[])
     splitter->show();
     return app.exec();
 }
-      
-
 ```
 
 执行这段代码，大概会生成如下效果
@@ -106,15 +104,11 @@ Qt提供的model有很多，有的是纯虚的model，有的是纯实的model，
 
 如果你使用QtCreator开发，那么你能够找到相关model的实现模板，我们在新建一个文件或项目时，选择Qt-&gt;item model。
 
-
-
 图片。。。。。。。。。。
 
 创建时有很多选项，总之我们都勾上。
 
 图片。。。。。。。。。。
-
-
 
 最后得到的代码如下：
 
@@ -291,8 +285,21 @@ bool TestModel::removeColumns(int column, int count, const QModelIndex &parent)
     // FIXME: Implement me!
     endRemoveColumns();
 }
-
 ```
 
-这就是model的模板了，我们需要基于这个模板重写各个方法的内容，由于我们的数据实际上是存储在FileItem中的，所以FileItem和model的联系会成为一个难点，我在这里给出我在实现FileItemModel时的思路。
+这就是model的模板了，我们需要基于这个模板重写各个方法的内容，由于我们的数据实际上是存储在FileItem中的，所以FileItem和model的联系会成为一个难点，我在这里给出我在实现FileItemModel时的思路，具体该怎么做还请大家结合代码深入的了解，相信有了以下提供的线索应该不会很困难。
+
+* 要使FileItem和FileItemModel绑定在一起，我之前也说过了，没有model，index就没有意义，所以在FileItem构造的时候必须传入一个model，这个model能使得index和FileItem进行相互的转化；
+* 对于parent和row相同的index，他们对应的data都是同一个FileItem，但是显示的信息是同个Item的不同部分，显示的内容由column决定。实际上，我们不同列的parent都可以指向第一列index的parent，这样大大简化了数据结构的复杂度；
+* FileItem有一个Vector管理它的同类子项，这在model中与每一个index一一对应，事实上一个parent的rowCount就是这个parent index对应的item的Vector的大小（如果parent非法则表示是根目录的Vector大小），而该parent的index\(row, column, parent\)则表示这个vector中的第row项。
+
+这样我们的model就构成了，我们也可以测试这个model的效果，在之前的一章中我们也看到了它呈现出来的效果，还不赖不是吗？
+
+当然其中还有许多的细节都被我忽略了，比如怎样动态的改变model，怎样实现异常处理，这些都需要item和model合作才能完成。
+
+现在的model还不能算作一个完成品，我还没有完全实现它的拖拽功能，要实现dnd，文件操作是必不可少的，这也是我下一章会分析的要点。
+
+
+
+NOTE：等文件操作和model的dnd机制实现并稳定下来后，我再补充这一块的内容。
 
