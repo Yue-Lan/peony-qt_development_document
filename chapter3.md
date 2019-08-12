@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 执行这段代码，大概会生成如下效果
 
-图片。。。。。。。。。。。。
+![](/assets/qfilesystemmodel.png)
 
 这段代码其实是从qt官方文档中截取的一段示例代码，稍作修改得出的，我们可以看出，通过model和view，我们能够使用不同的view展示同一个model。实际上，只要满足接口，model和view是可以即插即用的。
 
@@ -104,11 +104,11 @@ Qt提供的model有很多，有的是纯虚的model，有的是纯实的model，
 
 如果你使用QtCreator开发，那么你能够找到相关model的实现模板，我们在新建一个文件或项目时，选择Qt-&gt;item model。
 
-图片。。。。。。。。。。
+![](/assets/model-template.png)
 
 创建时有很多选项，总之我们都勾上。
 
-图片。。。。。。。。。。
+![](/assets/model-template2.png)
 
 最后得到的代码如下：
 
@@ -298,8 +298,6 @@ bool TestModel::removeColumns(int column, int count, const QModelIndex &parent)
 当然其中还有许多的细节都被我忽略了，比如怎样动态的改变model，怎样实现异常处理，这些都需要item和model合作才能完成。
 
 现在的model还不能算作一个完成品，我还没有完全实现它的拖拽功能，要实现dnd，文件操作是必不可少的，这也是我下一章会分析的要点。
-
-
 
 NOTE：等文件操作和model的dnd机制实现并稳定下来后，我再补充这一块的内容。
 
