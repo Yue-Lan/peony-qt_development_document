@@ -24,9 +24,15 @@
 
 peony-qt的回滚操作主要通过实时记录每一个子操作的状态实现，对应的抽象就是FileNode类。对于复杂的操作，可能还要设计到递归回滚，然而虽然说我极力保持操作的可回滚性，也不能百分之百的确定回滚后源文件或者目标文件的正确性——由于文件操作中错误处理类型的存在，一些子项操作是难以回滚的，比如说对一个已经overwrite处理的操作是难以恢复的，至少现在不支持。
 
-# 期望能够实现Undo和Redo
+# ~~期望能够实现Undo和Redo~~
 
-为什么说是期望，因为我还没有完成所有的文件操作的重构，在保证所有文件操作的原子性之后有一个好处，就是可以对已经完成（未取消）的操作进行undo和redo，也就是实现操作栈。在原子操作的前提下构造undo和redo也是相对简单的。这一块的内容等我完成了整个文件操作部分api的重构之后再进行补充。
+~~为什么说是期望，因为我还没有完成所有的文件操作的重构，在保证所有文件操作的原子性之后有一个好处，就是可以对已经完成（未取消）的操作进行undo和redo，也就是实现操作栈。在原子操作的前提下构造undo和redo也是相对简单的。这一块的内容等我完成了整个文件操作部分api的重构之后再进行补充。~~
+
+目前实现了一个简单的undo/redo框架，具体示例可以通过
+
+> [https://github.com/Yue-Lan/libpeony-qt-development-examples/tree/master/examples/model-usages/internal-dnd2-undo-redo](https://github.com/Yue-Lan/libpeony-qt-development-examples/tree/master/examples/model-usages/internal-dnd2-undo-redo "这个例子")
+
+进行查看。
 
 
 
