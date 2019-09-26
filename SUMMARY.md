@@ -6,4 +6,5 @@
 * [peony-qt与model/view编程](chapter3.md)
 * [peony-qt的文件操作](chapter4.md)
 * [基于GVFS扩展机制的搜索框架](chapter5.md)
+* [贡献准则](contribution-criteria.md)
 
