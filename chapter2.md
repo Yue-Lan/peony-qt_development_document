@@ -76,5 +76,11 @@ master分支是一个长期分支，目前整个peony-qt处于重构和新开发
 
 * file-operation-test的测试用例在libpeony-qt/file-operation/file-operation-test/file-operation-test
 
+## 测试用例
+
+在peony-qt中项目的测试用例是不稳定的，我专门创建了一个项目用于测试peony-qt的api，这个项目也可能对你入门和了解peony-qt有不小的帮助，详见：
+
+[https://github.com/Yue-Lan/libpeony-qt-development-examples](https://github.com/Yue-Lan/libpeony-qt-development-examples)
+
 
 
