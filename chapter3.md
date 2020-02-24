@@ -1,4 +1,4 @@
-# peony-qt与model/view编程
+# peony与model/view编程
 
 ## 什么是model/view编程？
 
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
 以上代码中的api都是由Qt提供的，我们也可以看出Qt给出的文件系统model十分的强大，然而它并非没有缺陷。最明显的一点，QFileSystemModel不具备读取本机文件系统之外的文件的能力，这使得它的应用场景变得十分狭小。比如，如果我想把一个文件放进回收站，或者从回收站还原一个文件，使用QFileSystemModel就很难了。
 
-GVfs提供了一些非常遍历的特殊uri作用域，其中就包括我之前所说的回收站，实际上Peony也是基于GVfs的，那么我们的Peony-Qt也应该对这一部分进行重构和迁移才行——我们需要实现类似于QFileSystemModel并且具有GVfs特性的model，这个目标非常明确，但是具体该如何去做呢？
+GVfs提供了一些非常遍历的特殊uri作用域，其中就包括我之前所说的回收站，实际上旧版Peony也是基于GVfs的，那么我们的Peony也应该对这一部分进行重构和迁移才行——我们需要实现类似于QFileSystemModel并且具有GVfs特性的model，这个目标非常明确，但是具体该如何去做呢？
 
 ## 实现自己的model
 
