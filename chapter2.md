@@ -1,6 +1,6 @@
 # 构建与测试
 
-首先给出peony-qt目前所在的仓库地址——[https://github.com/explorer-cs/peony-qt](https://github.com/explorer-cs/peony-qt "Peony-Qt")
+首先给出Peony目前所在的仓库地址——[https://github.com/ukui/peony](https://github.com/ukui/peony "Peony")
 
 对于刚刚接触这个项目的开发和测试人员而言，这一章的内容可能比较重要。目前的peony-qt主要有3个分支，它们分别是libfm-qt-based、master和file-operation-test，我对这3个分支的内容做一下简单的阐述。
 
@@ -14,13 +14,13 @@
 
 整个demo尽量复用了libfm-qt的api，比如说中间的侧边栏，地址按钮，完全没有进行二次封装，对于工具栏，则使用qt的QToolBar进行封装，并结合了libfm-qt以及其之外的一些接口实现。文件视图主要也是复用了libfm-qt的model和view，稍微对一些无法直接复用的地方做了适配。将这些控件基于现有的信号重新连接起来，执行对应的逻辑，就形成了一个新的文件管理器。
 
-libfm-qt-based的peony-qt可以算是一个问题多多但是勉强能够称之为文件管理器的应用，更多的功能可以在终端中使用帮助选项查看。
+libfm-qt-based的peony可以算是一个问题多多但是勉强能够称之为文件管理器的应用，更多的功能可以在终端中使用帮助选项查看。
 
 ![](/assets/libfm-qt-based2.png)
 
 ## master
 
-master分支是一个长期分支，目前整个peony-qt处于重构和新开发状态，可能会有许多不同侧重方向的分支。我会在这些分支成熟之后将其代码合并至master，目前master分支实现了大部分文件管理器所需要的gobject类型的封装，并且在在此之上实现了基于gvfs的model。
+master分支是一个长期分支，目前整个Peony处于重构和新开发状态，可能会有许多不同侧重方向的分支。我会在这些分支成熟之后将其代码合并至master，目前master分支实现了大部分文件管理器所需要的gobject类型的封装，并且在在此之上实现了基于gvfs的model。
 
 ![](/assets/master.png)
 
@@ -78,7 +78,7 @@ master分支是一个长期分支，目前整个peony-qt处于重构和新开发
 
 ## 测试用例
 
-在peony-qt中项目的测试用例是不稳定的，我专门创建了一个项目用于测试peony-qt的api，这个项目也可能对你入门和了解peony-qt有不小的帮助，详见：
+在Peony中项目的测试用例是不稳定的，我专门创建了一个项目用于测试peony-qt的api，这个项目也可能对你入门和了解peony有不小的帮助，详见：
 
 [https://github.com/Yue-Lan/libpeony-qt-development-examples](https://github.com/Yue-Lan/libpeony-qt-development-examples)
 
